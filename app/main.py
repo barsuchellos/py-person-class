@@ -1,17 +1,14 @@
 class Person:
     people = {}
 
-    def __init__(self, name, age, ):
+    def __init__(self, name, age):
         self.name = name
         self.age = age
 
-def create_person_list(people: list) -> list:
-    new_list = []
+        Person.people[name] = self
 
-    for person in people:
-        new_person = Person(name=person["name"], age=person["age"])
-        Person.people[person["name"]] = new_person
-        new_list.append(new_person)
+def create_person_list(people: list) -> list:
+    new_list = [Person(name=person["name"], age=person["age"]) for person in people]
 
     for person in people:
         if person.get("wife"):
